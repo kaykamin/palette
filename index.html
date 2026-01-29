@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Palette - Mood of the Day. 오늘의 감성을 담은 개인 마이크로 페이지">
+
+    <title>Palette - Mood of the Day</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="app" class="container">
+        <!-- Header Section -->
+        <header class="header fade-in">
+            <h1 class="site-title">Palette</h1>
+            <p class="site-subtitle">Mood of the Day</p>
+        </header>
+
+        <!-- Today's Question Section -->
+        <section id="question-section" class="section fade-in">
+            <h2 class="section-title">오늘의 질문</h2>
+            <div class="question-card">
+                <p class="question-text" id="question-text"></p>
+                <button class="expand-btn" id="expand-btn">
+                    <span class="expand-text">펼쳐보기</span>
+                    <svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="answer-container" id="answer-container">
+                    <p class="answer-text" id="answer-text"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section (Polaroid Style) -->
+        <section id="gallery-section" class="section fade-in">
+            <h2 class="section-title">오늘의 시선</h2>
+            <div class="polaroid-frame">
+                <div class="polaroid-image-wrapper">
+                    <img id="gallery-image" src="" alt="오늘의 사진" class="polaroid-image">
+                </div>
+                <p class="polaroid-caption" id="gallery-caption"></p>
+            </div>
+        </section>
+
+        <!-- Music Player Section -->
+        <section id="music-section" class="section fade-in">
+            <h2 class="section-title">배경 음악</h2>
+            <div class="music-player">
+                <div class="music-info">
+                    <p class="music-title" id="music-title"></p>
+                    <p class="music-artist" id="music-artist"></p>
+                </div>
+                <div class="music-controls">
+                    <button class="play-btn" id="play-btn">
+                        <svg class="play-icon" id="play-icon" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        <svg class="pause-icon hidden" id="pause-icon" width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <rect x="6" y="4" width="4" height="16"></rect>
+                            <rect x="14" y="4" width="4" height="16"></rect>
+                        </svg>
+                    </button>
+                </div>
+                <div class="music-progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <audio id="audio-player" preload="metadata"></audio>
+        </section>
+
+        <!-- Guestbook Section -->
+        <section id="guestbook-section" class="section fade-in">
+            <h2 class="section-title">색감 방명록</h2>
+            <div class="guestbook-form">
+                <div class="color-picker-wrapper">
+                    <label class="color-label">당신의 색을 선택하세요</label>
+                    <div class="color-options" id="color-options">
+                        <button class="color-option" data-color="#97c1a9" style="background-color: #97c1a9;"></button>
+                        <button class="color-option" data-color="#cce2cb" style="background-color: #cce2cb;"></button>
+                        <button class="color-option" data-color="#ffdbbe" style="background-color: #ffdbbe;"></button>
+                        <button class="color-option" data-color="#f6c1c1" style="background-color: #f6c1c1;"></button>
+                        <button class="color-option" data-color="#c1d4f6" style="background-color: #c1d4f6;"></button>
+                        <button class="color-option" data-color="#e8d4f6" style="background-color: #e8d4f6;"></button>
+                    </div>
+                </div>
+                <input type="text" class="guestbook-input" id="guestbook-input" placeholder="짧은 메시지를 남겨주세요..."
+                    maxlength="50">
+                <button class="submit-btn" id="submit-btn">남기기</button>
+            </div>
+            <div class="guestbook-entries" id="guestbook-entries">
+                <!-- Entries will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer fade-in">
+            <p class="footer-text">© 2025 Palette. Made with 💜</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
