@@ -1,125 +1,79 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Palette - Mood of the Day. 오늘의 감성을 담은 개인 마이크로 페이지">
-
-    <title>Palette - Mood of the Day</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <title>Palette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nanum Myeongjo', serif; -webkit-font-smoothing: antialiased; }
+        .hidden { display: none; }
+        .fade-in { animation: fadeIn 0.8s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
 </head>
+<body class="bg-[#fcfcfc] text-[#333]">
 
-<body>
-    <div id="app" class="container">
-        <!-- Header Section -->
-        <header class="header fade-in">
-            <h1 class="site-title">Palette</h1>
-            <p class="site-subtitle">Mood of the Day</p>
-        </header>
-
-        <!-- Today's Question Section -->
-        <section id="question-section" class="section fade-in">
-            <h2 class="section-title">오늘의 질문</h2>
-            <div class="question-card">
-                <p class="question-text" id="question-text"></p>
-                <button class="expand-btn" id="expand-btn">
-                    <span class="expand-text">펼쳐보기</span>
-                    <svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-                <div class="answer-container" id="answer-container">
-                    <p class="answer-text" id="answer-text"></p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section (Polaroid Style) -->
-        <section id="gallery-section" class="section fade-in">
-            <h2 class="section-title">오늘의 시선</h2>
-            <div class="polaroid-frame">
-                <div class="polaroid-image-wrapper">
-                    <img id="gallery-image" src="calm.jpg" alt="오늘의 사진" class="polaroid-image">
-                </div>
-                <p class="polaroid-caption" id="gallery-caption"></p>
-            </div>
-        </section>
-
-        <!-- Music Player Section -->
-        <section id="music-section" class="section fade-in">
-            <h2 class="section-title">배경 음악</h2>
-            <div class="music-player">
-                <div class="music-info">
-                    <p class="music-title" id="music-title"></p>
-                    <p class="music-artist" id="music-artist"></p>
-                </div>
-                <div class="music-controls">
-                    <button class="play-btn" id="play-btn">
-                        <svg class="play-icon" id="play-icon" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                        <svg class="pause-icon hidden" id="pause-icon" width="24" height="24" viewBox="0 0 24 24"
-                            fill="currentColor">
-                            <rect x="6" y="4" width="4" height="16"></rect>
-                            <rect x="14" y="4" width="4" height="16"></rect>
-                        </svg>
-                    </button>
-                </div>
-                <div class="music-progress">
-                    <div class="progress-bar" id="progress-bar"></div>
-                </div>
-            </div>
-            <audio id="audio-player" preload="metadata"></audio>
-        </section>
-
-        <!-- Guestbook Section -->
-        <section id="guestbook-section" class="section fade-in">
-            <h2 class="section-title">색감 방명록</h2>
-            <div class="guestbook-form">
-                <div class="color-picker-wrapper">
-                    <label class="color-label">당신의 색을 선택하세요</label>
-                    <div class="color-options" id="color-options">
-                        <button class="color-option" data-color="#97c1a9" style="background-color: #97c1a9;"></button>
-                        <button class="color-option" data-color="#cce2cb" style="background-color: #cce2cb;"></button>
-                        <button class="color-option" data-color="#ffdbbe" style="background-color: #ffdbbe;"></button>
-                        <button class="color-option" data-color="#f6c1c1" style="background-color: #f6c1c1;"></button>
-                        <button class="color-option" data-color="#c1d4f6" style="background-color: #c1d4f6;"></button>
-                        <button class="color-option" data-color="#e8d4f6" style="background-color: #e8d4f6;"></button>
-                    </div>
-                </div>
-                <input type="text" class="guestbook-input" id="guestbook-input" placeholder="짧은 메시지를 남겨주세요..."
-                    maxlength="50">
-                <button class="submit-btn" id="submit-btn">남기기</button>
-            </div>
-            <div class="guestbook-entries" id="guestbook-entries">
-                <!-- Entries will be dynamically added here -->
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer fade-in">
-            <p class="footer-text">© 2025 Palette. Made with 💜</p>
-        </footer>
+    <!-- Password Screen -->
+    <div id="login-screen" class="fixed inset-0 bg-[#f0f5f2] flex flex-col items-center justify-center z-50 text-center p-6">
+        <h1 class="text-4xl mb-3 font-bold text-[#97c1a9] tracking-tighter">Palette</h1>
+        <p class="text-gray-400 mb-8 italic text-sm">Please enter the secret code.</p>
+        <div class="flex flex-col w-full max-w-[240px] gap-3">
+            <input type="password" id="password-input" placeholder="Password" class="px-5 py-3 rounded-full border border-gray-100 text-center focus:outline-none focus:ring-1 focus:ring-[#97c1a9] bg-white text-sm">
+            <button id="btn-login" class="px-5 py-3 bg-[#97c1a9] text-white rounded-full shadow-sm hover:bg-[#86af97] transition-all font-bold text-sm">
+                Enter
+            </button>
+            <p id="error-msg" class="text-red-300 text-xs mt-2 hidden">Wrong password. Try again.</p>
+        </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Main Content -->
+    <div id="app" class="max-w-md mx-auto p-6 hidden fade-in pb-32">
+        <header class="mb-16 text-center pt-12">
+            <h1 id="site-title" class="text-3xl font-bold mb-1 tracking-tight">Palette</h1>
+            <p class="text-gray-300 italic text-xs uppercase tracking-widest">Mood of the Day</p>
+        </header>
+
+        <!-- Question Section -->
+        <section class="mb-16">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] text-gray-300 mb-6 text-center">Question</h2>
+            <div class="bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.02)] text-center">
+                <p id="question-text" class="text-lg mb-6 leading-relaxed text-[#444]"></p>
+                <button id="expand-btn" class="text-[10px] text-gray-300 border-b border-gray-100 pb-1 mx-auto hover:text-gray-500 transition-colors uppercase tracking-widest">
+                    <span>Read More</span>
+                </button>
+                <div id="answer-container" class="hidden mt-8 pt-8 border-t border-gray-50">
+                    <p id="answer-text" class="text-gray-500 leading-relaxed italic text-sm"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="mb-16">
+            <h2 class="text-[10px] uppercase tracking-[0.3em] text-gray-300 mb-6 text-center">Vision</h2>
+            <div class="bg-white p-4 pb-12 shadow-[0_20px_40px_rgba(0,0,0,0.04)] transform rotate-1">
+                <img id="today-image" src="" alt="Daily Vision" class="w-full h-80 object-cover mb-6">
+                <p id="image-caption" class="text-center text-xs italic text-gray-400 font-sans tracking-wide"></p>
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section class="fixed bottom-10 left-1/2 -translate-x-1/2 w-[85%] max-w-xs">
+            <div class="bg-white/70 backdrop-blur-xl p-4 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.05)] flex items-center justify-between px-6 border border-white/50">
+                <div class="flex-1 min-w-0 pr-4">
+                    <p id="music-title" class="text-xs font-bold truncate text-[#444]"></p>
+                    <p id="music-artist" class="text-[9px] text-gray-400 truncate uppercase tracking-tighter mt-0.5"></p>
+                </div>
+                <button id="play-btn" class="w-9 h-9 bg-[#333] text-white rounded-full flex items-center justify-center text-xs shadow-lg">▶</button>
+            </div>
+            <audio id="main-audio"></audio>
+        </section>
+    </div>
+
     <script src="data.js"></script>
     <script src="app.js"></script>
 </body>
-
-
 </html>
 
 
