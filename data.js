@@ -5,250 +5,40 @@
 
 
 const dailyData = [
-  {
-    day: 1,
-    question: "오늘 하루, 어떤 색으로 기억하고 싶나요?",
-    answer: "따뜻한 살구빛 노을을 닮은 하루였어요. 커피 한 잔의 여유가 좋았습니다.",
-    imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800",
-    caption: "Day 1: Soft start",
-    music: { title: "Morning Mist", artist: "Lofi Study", audioUrl: "https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3" }
-  },
-  {
-    day: 2,
-    question: "가장 좋아하는 계절은 무엇인가요?",
-    answer: "바스락거리는 낙엽 소리가 들리는 가을을 가장 좋아합니다.",
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
-    caption: "Day 2: Autumn mood",
-    music: { title: "Golden Hour", artist: "Jazz Piano", audioUrl: "https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a1.mp3" }
-  },
-  {
-    day: 3,
-    question: "1년 전 나에게 해주고 싶은 말은?",
-    answer: "너무 서두르지 않아도 괜찮아. 너만의 속도로 충분히 잘하고 있어.",
-    imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800",
-    caption: "Day 3: Self-love",
-    music: { title: "Slow Motion", artist: "Memory Lane", audioUrl: "https://cdn.pixabay.com/audio/2022/02/07/audio_d0a13f69d2.mp3" }
-  },
-  {
-    day: 4,
-    question: "당신의 소소한 행복은 무엇인가요?",
-    answer: "샤워 후 마시는 시원한 보리차 한 잔이 주는 해방감이요.",
-    imageUrl: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800",
-    caption: "Day 4: Small joy",
-    music: { title: "Sweet Dream", artist: "Acoustic Guitar", audioUrl: "https://cdn.pixabay.com/audio/2021/11/25/audio_c1a34.mp3" }
-  },
-  {
-    day: 5,
-    question: "다시 가고 싶은 여행지는 어디인가요?",
-    answer: "포르투의 좁은 골목길과 버스킹 음악이 들리던 강변입니다.",
-    imageUrl: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800",
-    caption: "Day 5: Porto nights",
-    music: { title: "Traveler", artist: "Indie Pop", audioUrl: "https://cdn.pixabay.com/audio/2022/05/15/audio_b2b2b2.mp3" }
-  },
-  {
-    day: 6,
-    question: "지금 가장 보고 싶은 사람은?",
-    answer: "멀리 떨어져 지내는 오랜 친구. 오늘따라 그 친구의 웃음소리가 그립네요.",
-    imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800",
-    caption: "Day 6: Missing you",
-    music: { title: "Old Friend", artist: "Piano Solo", audioUrl: "https://cdn.pixabay.com/audio/2022/01/20/audio_f3f3f3.mp3" }
-  },
-  {
-    day: 7,
-    question: "당신을 웃게 만드는 것은 무엇인가요?",
-    answer: "유튜브에서 보는 귀여운 강아지 영상들이요.",
-    imageUrl: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800",
-    caption: "Day 7: Pure smile",
-    music: { title: "Puppy Steps", artist: "Ukelele Joy", audioUrl: "https://cdn.pixabay.com/audio/2022/04/10/audio_e4e4e4.mp3" }
-  },
-  {
-    day: 8,
-    question: "가장 소중하게 여기는 물건은?",
-    answer: "어릴 때부터 써온 낡은 일기장입니다. 나의 모든 시간이 담겨 있죠.",
-    imageUrl: "https://images.unsplash.com/photo-1517842306296-583d78276727?w=800",
-    caption: "Day 8: Old diary",
-    music: { title: "Paper Sound", artist: "Vintage Mood", audioUrl: "https://cdn.pixabay.com/audio/2021/12/01/audio_d1d1d1.mp3" }
-  },
-  {
-    day: 9,
-    question: "최근에 읽은 책 중 기억에 남는 문장은?",
-    answer: "'살아가는 일은 사랑하는 일의 반복이다.'라는 문장이요.",
-    imageUrl: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800",
-    caption: "Day 9: Book worm",
-    music: { title: "Library", artist: "Calm Beats", audioUrl: "https://cdn.pixabay.com/audio/2022/08/01/audio_g5g5g5.mp3" }
-  },
-  {
-    day: 10,
-    question: "당신의 인생 영화는 무엇인가요?",
-    answer: "영화 '라라랜드'. 꿈과 현실 사이의 그 씁쓸한 아름다움이 좋아요.",
-    imageUrl: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800",
-    caption: "Day 10: Cinema Night",
-    music: { title: "City of Stars", artist: "Jazz Cover", audioUrl: "https://cdn.pixabay.com/audio/2022/09/10/audio_h6h6h6.mp3" }
-  },
-  {
-    day: 11,
-    question: "지금 가장 보고 싶은 사람은 누구인가요?",
-    answer: "초등학교 때 만난 친구들이요. 다들 어떻게 지내는지 궁금해요.",
-    imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
-    caption: "Day 11: Childhood friends",
-    music: { title: "First Love", artist: "Piano Melodies", audioUrl: "https://cdn.pixabay.com/audio/2022/01/25/audio_1a1a1a.mp3" }
-  },
-  {
-    day: 12,
-    question: "당신의 인생 영화는 무엇인가요?",
-    answer: "영화 '라라랜드'. 꿈과 현실 사이의 그 씁쓸한 아름다움이 좋아요.",
-    imageUrl: "https://images.unsplash.com/photo-1514302240736-b1fee5985881?w=800",
-    caption: "Day 12: Dreamers",
-    music: { title: "Another Day of Sun", artist: "Piano Jazz", audioUrl: "https://cdn.pixabay.com/audio/2022/03/15/audio_2b2b2b.mp3" }
-  },
-  {
-    day: 13,
-    question: "당신의 인생 책은 무엇인가요?",
-    answer: "'마지막 강의'요. 삶을 어떻게 바라봐야 할지를 책을 통해 배웠어요.",
-    imageUrl: "https://images.unsplash.com/photo-1474932430478-3a7fbaf5285d?w=800",
-    caption: "Day 13: Last Lecture",
-    music: { title: "Soul Wisdom", artist: "Ambient Light", audioUrl: "https://cdn.pixabay.com/audio/2022/05/20/audio_3c3c3c.mp3" }
-  },
-  {
-    day: 14,
-    question: "당신이 가장 좋아하는 노래는 무엇인가요?",
-    answer: "lany의 노래들을 좋아해요.",
-    imageUrl: "https://images.unsplash.com/photo-1459749411177-042180ce673c?w=800",
-    caption: "Day 14: Sweet Melody",
-    music: { title: "Pink Skies", artist: "Acoustic Pop", audioUrl: "https://cdn.pixabay.com/audio/2021/11/15/audio_4d4d4d.mp3" }
-  },
-  {
-    day: 15,
-    question: "당신이 가장 좋아하는 시간은 언제인가요?",
-    answer: "새벽이요. 저 혼자 일어나있다는 게 좋아요.",
-    imageUrl: "https://images.unsplash.com/photo-1444333509402-dd40d401397a?w=800",
-    caption: "Day 15: Silent Night",
-    music: { title: "Dawn", artist: "Soft Synth", audioUrl: "https://cdn.pixabay.com/audio/2022/07/10/audio_5e5e5e.mp3" }
-  },
-  {
-    day: 16,
-    question: "당신이 잊지 못하는 조언은 무엇인가요?",
-    answer: "어렸을 적 할아버지가 해주셨던 조언이요. 끊임없이 시도해 봐.",
-    imageUrl: "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?w=800",
-    caption: "Day 16: Wise words",
-    music: { title: "Encouragement", artist: "Inspirational Piano", audioUrl: "https://cdn.pixabay.com/audio/2022/09/20/audio_6f6f6f.mp3" }
-  },
-  {
-    day: 17,
-    question: "당신의 인생 여행지는 어디인가요?",
-    answer: "탄자니아요! 그곳에서 경험한 광활한 자연을 잊지 못해요.",
-    imageUrl: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800",
-    caption: "Day 17: Safari",
-    music: { title: "Wild Nature", artist: "World Music", audioUrl: "https://cdn.pixabay.com/audio/2022/11/05/audio_7g7g7g.mp3" }
-  },
-  {
-    day: 18,
-    question: "죽기 전에 꼭 해보고 싶은 것은 무엇인가요?",
-    answer: "스쿠버 다이빙이요.",
-    imageUrl: "https://images.unsplash.com/photo-1544551763-47a184119879?w=800",
-    caption: "Day 18: Deep Blue",
-    music: { title: "Under Water", artist: "Calm Waves", audioUrl: "https://cdn.pixabay.com/audio/2023/01/10/audio_8h8h8h.mp3" }
-  },
-  {
-    day: 19,
-    question: "5년 후 당신은 어디 있을 것 같나요?",
-    answer: "유럽 어딘가에서 행복하게 지내고 있으면 좋겠어요.",
-    imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800",
-    caption: "Day 19: Future Self",
-    music: { title: "New Road", artist: "Happy Journey", audioUrl: "https://cdn.pixabay.com/audio/2023/02/15/audio_9i9i9i.mp3" }
-  },
-  {
-    day: 20,
-    question: "배우고 싶은 것이 있나요?",
-    answer: "바이올린 수업을 받아보고 싶어요.",
-    imageUrl: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800",
-    caption: "Day 20: New Talent",
-    music: { title: "Violin Solo", artist: "Classic Muse", audioUrl: "https://cdn.pixabay.com/audio/2022/01/12/audio_1j1j1j.mp3" }
-  },
-  {
-    day: 21,
-    question: "보통 생일은 어떻게 보내나요?",
-    answer: "가족들이랑 외식하고 저녁에는 혼자 생각하는 시간을 가져요.",
-    imageUrl: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800",
-    caption: "Day 21: Birthday night",
-    music: { title: "Gift", artist: "Sweet Lofi", audioUrl: "https://cdn.pixabay.com/audio/2022/02/20/audio_2k2k2k.mp3" }
-  },
-  {
-    day: 22,
-    question: "당신이 가장 좋아하는 숫자는 무엇인가요?",
-    answer: "숫자 6을 좋아해요. 특별한 이유는 없고요.",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-027ffec95c1c?w=800",
-    caption: "Day 22: Lucky number",
-    music: { title: "Six", artist: "Simple Beats", audioUrl: "https://cdn.pixabay.com/audio/2022/03/10/audio_3l3l3l.mp3" }
-  },
-  {
-    day: 23,
-    question: "당신의 인생 드라마는 무엇인가요?",
-    answer: "'응답하라 1988'을 좋아해요. 5번 넘게 봤을 정도예요.",
-    imageUrl: "https://images.apache.org/photo-1521737604893-d14cc237f11d?w=800",
-    caption: "Day 23: Good old days",
-    music: { title: "Nostalgia", artist: "Vintage Sound", audioUrl: "https://cdn.pixabay.com/audio/2022/04/15/audio_4m4m4m.mp3" }
-  },
-  {
-    day: 24,
-    question: "가장 가보고 싶은 곳은 어디인가요?",
-    answer: "모로코에 꼭 가보고 싶어요.",
-    imageUrl: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800",
-    caption: "Day 24: Sahara",
-    music: { title: "Desert Wind", artist: "Ethnic Mood", audioUrl: "https://cdn.pixabay.com/audio/2022/05/20/audio_5n5n5n.mp3" }
-  },
-  {
-    day: 25,
-    question: "당신이 가장 슬펐던 순간은 언제인가요?",
-    answer: "가족을 두고 해외로 유학 왔을 때 정말 슬펐어요.",
-    imageUrl: "https://images.unsplash.com/photo-1516589174184-c6854b1d6b48?w=800",
-    caption: "Day 25: Farewell",
-    music: { title: "Sad Song", artist: "Cello Echo", audioUrl: "https://cdn.pixabay.com/audio/2022/06/10/audio_6o6o6o.mp3" }
-  },
-  {
-    day: 26,
-    question: "당신의 모토는 무엇인가요?",
-    answer: "'해보고 후회하는 게 안 하고 후회하는 것보다 낫다' 입니다.",
-    imageUrl: "https://images.unsplash.com/photo-1502139173938-438217d1b331?w=800",
-    caption: "Day 26: Just do it",
-    music: { title: "Courage", artist: "Epic Morning", audioUrl: "https://cdn.pixabay.com/audio/2022/07/20/audio_7p7p7p.mp3" }
-  },
-  {
-    day: 27,
-    question: "본인이 매일 성장하고 있다고 느끼나요?",
-    answer: "글쎄요. 그랬으면 좋겠네요.",
-    imageUrl: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800",
-    caption: "Day 27: Growth",
-    music: { title: "Stepping Up", artist: "Steady Tempo", audioUrl: "https://cdn.pixabay.com/audio/2022/08/10/audio_8q8q8q.mp3" }
-  },
-  {
-    day: 28,
-    question: "당신의 가장 친한 친구는 누구인가요?",
-    answer: "저 자신인 것 같아요. 항상 함께 있으니까요.",
-    imageUrl: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=800",
-    caption: "Day 28: Best friend",
-    music: { title: "Self Reflection", artist: "Chill Out", audioUrl: "https://cdn.pixabay.com/audio/2022/09/15/audio_9r9r9r.mp3" }
-  },
-  {
-    day: 29,
-    question: "오늘 당신의 기분은 어떤가요?",
-    answer: "좋아요! 날씨가 화창해서 그런 거 같아요.",
-    imageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800",
-    caption: "Day 29: Sunny day",
-    music: { title: "Shining", artist: "Upbeat Vibe", audioUrl: "https://cdn.pixabay.com/audio/2022/10/10/audio_1s1s1s.mp3" }
-  },
-  {
-    day: 30,
-    question: "지난 30일간 당신은 어떤 색으로 물들었나요?",
-    answer: "다양한 질문에 답하며 나만의 다채로운 팔레트를 발견한 시간이었습니다.",
-    imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800",
-    caption: "Day 30: Palette complete",
-    music: { title: "Ending", artist: "Warm Hug", audioUrl: "https://cdn.pixabay.com/audio/2022/11/20/audio_2t2t2t.mp3" }
-  }
+    { day: 1, question: "오늘 하루, 어떤 색으로 기억하고 싶나요?", answer: "따뜻한 살구빛 노을을 닮은 하루였어요. 커피 한 잔의 여유가 좋았습니다.", imageUrl: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800", caption: "Day 1: Soft start", music: { title: "Morning Mist", artist: "Lofi Study", audioUrl: "https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3" } },
+    { day: 2, question: "가장 좋아하는 계절은 무엇인가요?", answer: "바스락거리는 낙엽 소리가 들리는 가을을 가장 좋아합니다.", imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800", caption: "Day 2: Autumn mood", music: { title: "Golden Hour", artist: "Jazz Piano", audioUrl: "https://cdn.pixabay.com/audio/2022/03/10/audio_c8c8a1.mp3" } },
+    { day: 3, question: "1년 전 나에게 해주고 싶은 말은?", answer: "너무 서두르지 않아도 괜찮아. 너만의 속도로 충분히 잘하고 있어.", imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800", caption: "Day 3: Self-love", music: { title: "Slow Motion", artist: "Memory Lane", audioUrl: "https://cdn.pixabay.com/audio/2022/02/07/audio_d0a13f69d2.mp3" } },
+    { day: 4, question: "당신의 소소한 행복은 무엇인가요?", answer: "샤워 후 마시는 시원한 보리차 한 잔이 주는 해방감이요.", imageUrl: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800", caption: "Day 4: Small joy", music: { title: "Sweet Dream", artist: "Acoustic Guitar", audioUrl: "https://cdn.pixabay.com/audio/2021/11/25/audio_c1a34.mp3" } },
+    { day: 5, question: "다시 가고 싶은 여행지는 어디인가요?", answer: "포르투의 좁은 골목길과 버스킹 음악이 들리던 강변입니다.", imageUrl: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800", caption: "Day 5: Porto nights", music: { title: "Traveler", artist: "Indie Pop", audioUrl: "https://cdn.pixabay.com/audio/2022/05/15/audio_b2b2b2.mp3" } },
+    { day: 6, question: "지금 가장 보고 싶은 사람은?", answer: "멀리 떨어져 지내는 오랜 친구. 오늘따라 그 친구의 웃음소리가 그립네요.", imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800", caption: "Day 6: Missing you", music: { title: "Old Friend", artist: "Piano Solo", audioUrl: "https://cdn.pixabay.com/audio/2022/01/20/audio_f3f3f3.mp3" } },
+    { day: 7, question: "당신을 웃게 만드는 것은 무엇인가요?", answer: "유튜브에서 보는 귀여운 강아지 영상들이요.", imageUrl: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800", caption: "Day 7: Pure smile", music: { title: "Puppy Steps", artist: "Ukelele Joy", audioUrl: "https://cdn.pixabay.com/audio/2022/04/10/audio_e4e4e4.mp3" } },
+    { day: 8, question: "가장 소중하게 여기는 물건은?", answer: "어릴 때부터 써온 낡은 일기장입니다. 나의 모든 시간이 담겨 있죠.", imageUrl: "https://images.unsplash.com/photo-1517842306296-583d78276727?w=800", caption: "Day 8: Old diary", music: { title: "Paper Sound", artist: "Vintage Mood", audioUrl: "https://cdn.pixabay.com/audio/2021/12/01/audio_d1d1d1.mp3" } },
+    { day: 9, question: "최근에 읽은 책 중 기억에 남는 문장은?", answer: "'살아가는 일은 사랑하는 일의 반복이다.'라는 문장이요.", imageUrl: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800", caption: "Day 9: Book worm", music: { title: "Library", artist: "Calm Beats", audioUrl: "https://cdn.pixabay.com/audio/2022/08/01/audio_g5g5g5.mp3" } },
+    { day: 10, question: "당신의 인생 영화는 무엇인가요?", answer: "영화 '라라랜드'. 꿈과 현실 사이의 그 씁쓸한 아름다움이 좋아요.", imageUrl: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800", caption: "Day 10: Cinema Night", music: { title: "City of Stars", artist: "Jazz Cover", audioUrl: "https://cdn.pixabay.com/audio/2022/09/10/audio_h6h6h6.mp3" } },
+    { day: 11, question: "지금 가장 보고 싶은 사람은 누구인가요?", answer: "초등학교 때 만난 친구들이요. 다들 어떻게 지내는지 궁금해요.", imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800", caption: "Day 11: Friends", music: { title: "First Love", artist: "Piano Melodies", audioUrl: "https://cdn.pixabay.com/audio/2022/01/25/audio_1a1a1a.mp3" } },
+    { day: 12, question: "당신의 인생 영화는 무엇인가요?", answer: "꿈꾸는 사람들을 위한 영화, 라라랜드를 다시 봐도 좋네요.", imageUrl: "https://images.unsplash.com/photo-1514302240736-b1fee5985881?w=800", caption: "Day 12: Dreamers", music: { title: "Another Day", artist: "Piano Jazz", audioUrl: "https://cdn.pixabay.com/audio/2022/03/15/audio_2b2b2b.mp3" } },
+    { day: 13, question: "당신의 인생 책은 무엇인가요?", answer: "'마지막 강의'요. 삶을 어떻게 바라봐야 할지를 배웠어요.", imageUrl: "https://images.unsplash.com/photo-1474932430478-3a7fbaf5285d?w=800", caption: "Day 13: Wisdom", music: { title: "Soul Light", artist: "Ambient", audioUrl: "https://cdn.pixabay.com/audio/2022/05/20/audio_3c3c3c.mp3" } },
+    { day: 14, question: "당신이 가장 좋아하는 노래는?", answer: "Lany의 모든 곡들을 사랑합니다. 그 분위기가 너무 좋아요.", imageUrl: "https://images.unsplash.com/photo-1459749411177-042180ce673c?w=800", caption: "Day 14: Sweet Melody", music: { title: "Pink Skies", artist: "Acoustic", audioUrl: "https://cdn.pixabay.com/audio/2021/11/15/audio_4d4d4d.mp3" } },
+    { day: 15, question: "당신이 가장 좋아하는 시간은?", answer: "모두가 잠든 새벽, 나 혼자 깨어있는 그 고요함을 좋아해요.", imageUrl: "https://images.unsplash.com/photo-1444333509402-dd40d401397a?w=800", caption: "Day 15: Silent Night", music: { title: "Dawn", artist: "Soft Synth", audioUrl: "https://cdn.pixabay.com/audio/2022/07/10/audio_5e5e5e.mp3" } },
+    { day: 16, question: "당신이 잊지 못하는 조언은?", answer: "어렸을 적 할아버지가 해주셨던 '끊임없이 시도하라'는 말씀.", imageUrl: "https://images.unsplash.com/photo-1508847154043-be5407fcaa5a?w=800", caption: "Day 16: Wise words", music: { title: "Encourage", artist: "Piano", audioUrl: "https://cdn.pixabay.com/audio/2022/09/20/audio_6f6f6f.mp3" } },
+    { day: 17, question: "당신의 인생 여행지는?", answer: "탄자니아의 광활한 자연 속에서 느꼈던 자유를 잊지 못해요.", imageUrl: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800", caption: "Day 17: Safari", music: { title: "Wild Nature", artist: "World", audioUrl: "https://cdn.pixabay.com/audio/2022/11/05/audio_7g7g7g.mp3" } },
+    { day: 18, question: "죽기 전에 꼭 해보고 싶은 것은?", answer: "깊은 바닷속을 탐험하는 스쿠버 다이빙입니다.", imageUrl: "https://images.unsplash.com/photo-1544551763-47a184119879?w=800", caption: "Day 18: Deep Blue", music: { title: "Under Water", artist: "Waves", audioUrl: "https://cdn.pixabay.com/audio/2023/01/10/audio_8h8h8h.mp3" } },
+    { day: 19, question: "5년 후 당신은 어디 있을까요?", answer: "유럽 어딘가에서 여유롭게 커피를 마시며 글을 쓰고 있길.", imageUrl: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800", caption: "Day 19: Future", music: { title: "New Road", artist: "Journey", audioUrl: "https://cdn.pixabay.com/audio/2023/02/15/audio_9i9i9i.mp3" } },
+    { day: 20, question: "배우고 싶은 것이 있나요?", answer: "마음을 울리는 바이올린 연주를 꼭 배워보고 싶어요.", imageUrl: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=800", caption: "Day 20: Talent", music: { title: "Violin", artist: "Classic", audioUrl: "https://cdn.pixabay.com/audio/2022/01/12/audio_1j1j1j.mp3" } },
+    { day: 21, question: "보통 생일은 어떻게 보내나요?", answer: "낮에는 가족과 외식하고, 밤에는 혼자 조용히 일기를 써요.", imageUrl: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800", caption: "Day 21: Birthday", music: { title: "Gift", artist: "Lofi", audioUrl: "https://cdn.pixabay.com/audio/2022/02/20/audio_2k2k2k.mp3" } },
+    { day: 22, question: "가장 좋아하는 숫자는?", answer: "둥글둥글한 느낌이 좋은 숫자 6을 좋아합니다.", imageUrl: "https://images.unsplash.com/photo-1454165833767-027ffec95c1c?w=800", caption: "Day 22: Lucky 6", music: { title: "Six", artist: "Simple", audioUrl: "https://cdn.pixabay.com/audio/2022/03/10/audio_3l3l3l.mp3" } },
+    { day: 23, question: "당신의 인생 드라마는?", answer: "'응답하라 1988'. 볼 때마다 가족의 사랑이 느껴져서 좋아요.", imageUrl: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800", caption: "Day 23: Nostalgia", music: { title: "Memory", artist: "Vintage", audioUrl: "https://cdn.pixabay.com/audio/2022/04/15/audio_4m4m4m.mp3" } },
+    { day: 24, question: "가장 가보고 싶은 곳은?", answer: "신비로운 붉은 도시 모로코에 꼭 한 번 가보고 싶어요.", imageUrl: "https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?w=800", caption: "Day 24: Sahara", music: { title: "Wind", artist: "Ethnic", audioUrl: "https://cdn.pixabay.com/audio/2022/05/20/audio_5n5n5n.mp3" } },
+    { day: 25, question: "가장 슬펐던 순간은 언제인가요?", answer: "꿈을 위해 가족과 떨어져 유학을 떠나던 공항에서의 이별.", imageUrl: "https://images.unsplash.com/photo-1516589174184-c6854b1d6b48?w=800", caption: "Day 25: Farewell", music: { title: "Sadness", artist: "Cello", audioUrl: "https://cdn.pixabay.com/audio/2022/06/10/audio_6o6o6o.mp3" } },
+    { day: 26, question: "당신의 모토는 무엇인가요?", answer: "안 하고 후회하는 것보다, 해보고 후회하는 게 훨씬 낫다!", imageUrl: "https://images.unsplash.com/photo-1502139173938-438217d1b331?w=800", caption: "Day 26: Just do it", music: { title: "Courage", artist: "Epic", audioUrl: "https://cdn.pixabay.com/audio/2022/07/20/audio_7p7p7p.mp3" } },
+    { day: 27, question: "매일 성장하고 있다고 느끼나요?", answer: "아주 조금씩이라도 어제의 나보다 나아지려 노력 중이에요.", imageUrl: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800", caption: "Day 27: Growth", music: { title: "Step Up", artist: "Tempo", audioUrl: "https://cdn.pixabay.com/audio/2022/08/10/audio_8q8q8q.mp3" } },
+    { day: 28, question: "당신의 가장 친한 친구는?", answer: "결국 나 자신이에요. 내 마음을 가장 잘 알아주는 친구죠.", imageUrl: "https://images.unsplash.com/photo-1515162305285-0293e4767cc2?w=800", caption: "Day 28: Me", music: { title: "Reflection", artist: "Chill", audioUrl: "https://cdn.pixabay.com/audio/2022/09/15/audio_9r9r9r.mp3" } },
+    { day: 29, question: "오늘 당신의 기분은 어떤가요?", answer: "화창한 날씨 덕분에 마음까지 맑아지는 기분 좋은 하루!", imageUrl: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800", caption: "Day 29: Sunny", music: { title: "Shining", artist: "Upbeat", audioUrl: "https://cdn.pixabay.com/audio/2022/10/10/audio_1s1s1s.mp3" } },
+    { day: 30, question: "한 달간 당신은 어떤 색이었나요?", answer: "30일간의 질문 끝에 발견한 나만의 다채로운 팔레트. 행복했어요.", imageUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800", caption: "Day 30: Complete", music: { title: "End", artist: "Hug", audioUrl: "https://cdn.pixabay.com/audio/2022/11/20/audio_2t2t2t.mp3" } }
 ];
 
 const themes = [
-  { name: "sage", color: "#97c1a9" },
-  { name: "mint", color: "#cce2cb" },
-  { name: "apricot", color: "#ffdbbe" }
+    { name: "sage", color: "#97c1a9" },
+    { name: "mint", color: "#cce2cb" },
+    { name: "apricot", color: "#ffdbbe" }
 ];
